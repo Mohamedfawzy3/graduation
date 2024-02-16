@@ -1,8 +1,9 @@
 {
+  "homepage": "https://Mohamedfawzy3.github.io/graduation",
   "name": "version1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Mohamedfawzy3.github.io/graduation",
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
