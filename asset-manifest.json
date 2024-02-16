@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/graduation/static/css/main.250ccdfb.css",
+    "main.js": "/graduation/static/js/main.51c8c29d.js",
+    "static/js/453.a1b387fe.chunk.js": "/graduation/static/js/453.a1b387fe.chunk.js",
+    "index.html": "/graduation/index.html",
+    "main.250ccdfb.css.map": "/graduation/static/css/main.250ccdfb.css.map",
+    "main.51c8c29d.js.map": "/graduation/static/js/main.51c8c29d.js.map",
+    "453.a1b387fe.chunk.js.map": "/graduation/static/js/453.a1b387fe.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.250ccdfb.css",
+    "static/js/main.51c8c29d.js"
+  ]
+}
