@@ -47,8 +47,8 @@ const SignUP = () => {
           className={`${style.foir} container col-lg-8 col-sm-12 py-3 bg-white rounded-4 `}
         >
             <h2 className="text-center mb-4">انشاء حساب</h2>
-            <div>
-                <span></span><br />
+            <div className={`text-center`}>
+                <span></span>
                 <span></span>
             </div>
           <form class="row g-3 col-md-10 mx-auto">
@@ -59,7 +59,7 @@ const SignUP = () => {
               <input
                 type="text"
                 class={`form-control ${style.inputChange}`}
-                placeholder="ادخل الاسم هنا كاملا"
+                placeholder="الاسم الاول"
                 id="validationDefault01"
                 onInvalid={(e) =>
                   e.target.setCustomValidity("برجاء ادخال اسم صحيح")
@@ -76,6 +76,7 @@ const SignUP = () => {
                 type="text"
                 class={`form-control ${style.inputChange}`}
                 id="validationDefault02"
+                placeholder="اسم العائله"
                 required
               />
             </div>
@@ -89,6 +90,7 @@ const SignUP = () => {
                 class={`form-control ${style.inputChange}`}
                 name="email"
                 id="email"
+                placeholder="Example@gmail.com"
                 aria-describedby="inputGroupPrepend2"
                 required
               />
@@ -102,6 +104,7 @@ const SignUP = () => {
                 class={`form-control ${style.inputChange}`}
                 id="id"
                 name="id"
+                placeholder="ادخل 14 رقم"
                 required
               />
             </div>
@@ -128,6 +131,7 @@ const SignUP = () => {
                 onChange={handleCity}
                 required
                 value={gov}
+               
                 name="government"
               >
                 <option selected disabled value="">
@@ -272,7 +276,7 @@ const SignUP = () => {
             </div>
            
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">
+              <button class="btn btn-dark" type="submit">
                 انشاء حساب
               </button>
             </div>
