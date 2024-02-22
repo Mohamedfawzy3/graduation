@@ -3,8 +3,17 @@
     margin: 0px;
     padding: 0px;
 }
+:root{
+  --main-link-hover: #f5a425;
+  --main-transation: 0.3s;
+  --a-background: #a12c2f;
+  --main-text-color: #1f272b;
+}
 .Box{
-    background-image: url('../images/pg7.png');
+    /* background-image: url('../images/pg8.jpg'); */
+    background-color: #7c8b70;
+background-image: linear-gradient(0deg, #7c8b70 0%, #97D9E1 75%);
+
     background-attachment: fixed;
 background-size: cover;
 height: 100vh;
@@ -20,14 +29,25 @@ display: flex;
     justify-content: center;
 }
 ul{
-
+transition: var(--main-transation);
+display: flex;
+margin: 0px;
 }
 ul li{
     list-style: none;
+    background-color: white;
 }
 ul li a{
     text-decoration: none;
-   
+    color: var(--main-text-color);
+    font-size: 17px;
+    padding: 4px 8px;
+    display: inline-block;
+    margin: 0px 3px;
+    transition: var(--main-transation);
+}
+ul li a:hover{
+  color: var(--main-link-hover);
 }
 .nav{
     background: #ffffff;
@@ -35,3 +55,78 @@ ul li a{
     width: 100%;
  
 }
+.links{
+
+}
+
+.nav button,button{
+    border: 1px solid #416b5f;
+    background: transparent;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: #273535;
+    font-size: 10px;
+    font-weight: bold;
+}
+.icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+    text-align: center;
+    display: none;
+  }
+  .icon span {
+    display: inline-block;
+    height: 2px;
+  
+    background-color: rgb(83, 83, 83);
+  }
+  .icon span:first-child {
+    width: 70%;
+    transition: var(--main-transation);
+  }
+  .icon span:nth-child(2) {
+    width: 100%;
+    transition: 0.3s;
+    margin: 9px 0px;
+  }
+  .icon span:last-child {
+    width: 70%;
+    transition: var(--main-transation);
+  }
+  @media (max-width:465px) {
+    ul{
+    
+      padding: 0px;
+
+    }
+    ul li{
+      padding: 5px;
+border-bottom: 1px solid var(--main-text-color);
+    }
+    .links{
+      display: none;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  right: 0px;
+  top: 40px;
+  text-align: center;
+    }
+    .icon{
+      display: flex ;
+    }
+  }
+  .homeContent{
+  color: var(--main-text-color);
+  font-size: 20px;
+  font-weight: 500;
+  }
+  .homeContent div{
+    font-size: 45px;
+    margin: 20px;
+    color: var(--main-transation);
+}
+  

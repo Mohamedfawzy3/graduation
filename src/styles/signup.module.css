@@ -20,31 +20,5 @@ label{
 .body{
     background-color: #ecf1f9;
 }
-span{
-    display: inline-block;
-    width: 50px;
-    height: 3px;
-    background-color: #009999;
-    position: relative;
-    margin: 0px 5px;
-}
 
-span::after{
-    content: '';
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    border: 2px solid #009999;
-    background-color:#ffffff;
-    position: absolute;
-   right: 0px;
-    top: -3px;
-    
-}
-span:first-of-type::after{
-   
 
-    
-    top: -3px;
-   right: 30px;
-}
