@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStethoscope,faFlask,faStaffSnake,faUserDoctor,faRadiation } from '@fortawesome/free-solid-svg-icons'; 
+import { faStethoscope,faFlask,faStaffSnake,faUserDoctor,faRadiation,faCheck } from '@fortawesome/free-solid-svg-icons'; 
 import style from "../styles/Home.module.css";
 
 const Home = () => {
@@ -65,7 +65,7 @@ const Home = () => {
                 className={`${style.links} col-sm-12 text-sm-center d-sm-flex align-item-center`}
                 ref={ulref}
               >
-                <ul className=" flex-column flex-md-row text-sm-center">
+                <ul className="d-flex flex-column flex-md-row text-sm-center">
                   <li className=" ms-sm-1 mb-1 ">
                     <a href="#">الرئيسيه</a>
                   </li>
@@ -106,7 +106,7 @@ const Home = () => {
               تقدر توصلها فى اى وقت وتشاركها مع طبيبك او الصيدليه واماكن تانيه
             </p>
             <div>
-              <button className={`${style.start_button}  ` } onClick={() => ChangePath('/signin')} >
+              <button className={`${style.start_button}` } onClick={() => ChangePath('/signup')} >
              ابدأ الان
               </button>
           
@@ -167,6 +167,29 @@ const Home = () => {
 <h3 className={style.kind}>معمل الاشعه</h3>
   <div className={`${style.text} fs-5`}>معمل الاشعه يقدر يشوف الفخوصات المطلوبه فى ملفك الطبى وبمجرد الانتهاء منها يتم رفع نتائج الفحوصات الى ملفك مباشره لتكون جاهزه للاطلع عليها من قبل طبيبك. </div>
 </div>
+</div>
+        </section>
+        <section className={`${style.why_us} py-5`}>
+        <h2 className="text-center mb-5 fs-1 fw-bold">لماذا نحن</h2>
+<div className=" d-flex flex-column-reverse flex-md-row">
+
+  <div className={`${style.text} col-12 col-sm-6 p-4`}>
+    <ul>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> بياناتك كلها فى امان</li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> اكتر من 60.000 طبيب</li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> اكتر من 30.000 معمل</li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> اكتر من 25.000 مركز اشعه</li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> بياناتك كلها فى مكان واحد</li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> توفير الوقت والجهد </li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> تحسين تجربه المريض</li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> تحسين جوده الرعايه</li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} /> الحد من اخطاء الروشته الورقيه</li>
+      <li className="mb-3  fs-5 fw-medium"><FontAwesomeIcon className="text-success ms-1" icon={faCheck} />التطبيق مجانى  تماما</li>
+    </ul>
+  </div>
+  <div className={`${style.image} col-12 col-sm-6`}>
+  <img src={require('../images/pg25.jpg')} alt="Thinking_img" />
+  </div>
 </div>
         </section>
     </div>
