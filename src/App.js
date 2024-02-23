@@ -7,7 +7,9 @@ import Home from './componant/Home';
 import SignUP from './componant/SignUP';
 import Error from './componant/Error';
 import Signin from './componant/Signin';
+
 function App() {
+  
   return (
   <HashRouter>
   <Routes>
