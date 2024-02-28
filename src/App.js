@@ -7,7 +7,7 @@ import Home from './componant/Home';
 import SignUP from './componant/SignUP';
 import Error from './componant/Error';
 import Signin from './componant/Signin';
-
+import ContactUs from './componant/ContactUs';
 function App() {
   
   return (
@@ -18,6 +18,7 @@ function App() {
     })}
     <Route path="/signin" element={<Signin/>}/>
     <Route path="/signup" element={<SignUP/>}/>
+   <Route path="/contactus" element={<ContactUs/>}/>
     <Route path='*' element={<Error/>}/>
   </Routes>
   </HashRouter>

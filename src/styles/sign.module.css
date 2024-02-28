@@ -2,8 +2,14 @@
     direction: rtl;
   box-sizing: border-box;
 }
-.foir{
-    
+:root{
+    --main-link-hover: #f5a425;
+    --main-transation: 0.3s;
+    --a-background: #a12c2f;
+    --main-text-color: #1f272b;
+  }
+.box h2{
+    color: var(--main-text-color);
 }
 .inputChange{
     border: none;

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useRef} from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStethoscope,faFlask,faStaffSnake,faUserDoctor,faRadiation,faCheck } from '@fortawesome/free-solid-svg-icons'; 
 import style from "../styles/Home.module.css";
-
+import Footer from "./Footer";
 const Home = () => {
   const [flag, setflag] = useState(true);
   const spanRefs = useRef([]);
@@ -67,16 +67,16 @@ const Home = () => {
               >
                 <ul className="d-flex flex-column flex-md-row text-sm-center">
                   <li className=" ms-sm-1 mb-1 ">
-                    <a href="#">الرئيسيه</a>
+                    <Link to='/'>الرئيسيه</Link>
                   </li>
                   <li className=" ms-sm-1 mb-1">
-                    <a href="#">الاهداف</a>
+                    <Link to='/signup'>الاهداف</Link>
                   </li>
                   <li className=" ms-sm-1 mb-1">
-                    <a href="#">نبذه</a>
+                    <Link to=''>نبذه</Link>
                   </li>
                   <li>
-                    <a href="#">تواصل معنا</a>
+                    <Link to='/contactus'>تواصل معنا</Link>
                   </li>
                 </ul>
                 <div className="m-4 m-sm-1">
@@ -192,7 +192,9 @@ const Home = () => {
   </div>
 </div>
         </section>
+        <Footer/>
     </div>
+    
   );
 };
 

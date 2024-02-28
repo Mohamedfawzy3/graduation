@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import style from "../styles/signup.module.css";
+import React, { useEffect, useState } from "react";
+import style from "../styles/sign.module.css";
+import { Link } from "react-router-dom";
+import axios from 'axios'
 const SignUP = () => {
   const [gov, setGov] = useState("");
   const [index, setIndex] = useState();
@@ -11,6 +13,16 @@ const SignUP = () => {
     setIndex(selectedOption.getAttribute("index"));
     console.log("Index of selected option:", index);
   };
+  const Government=()=>{
+    axios.get('https://atfawry.fawrystaging.com/ECommerceWeb/api/lookups/govs')
+    .then((res)=>console.log(res.data))
+    .catch((err)=>console.log(err))
+  }
+  useEffect(()=>{
+  Government()
+  
+ 
+  },[])
   const [city, setCity] = useState([
     ["ahmed", "ali"],
     [10, 30],
@@ -23,7 +35,7 @@ const SignUP = () => {
     [8],
     [9],
     [10],
-    ["الباجور", "الشهداء", "قويسنا", "منوف", "سرس الليان", "بركه السبع", "تلا"],
+    ["شبين الكوم","الباجور", "الشهداء", "قويسنا", "منوف", "سرس الليان", "بركه السبع", "تلا"],
     [],
     [],
     [],
@@ -248,7 +260,7 @@ const SignUP = () => {
               />
             </div>
             <div class="col-md-12">
-              <label for="validationDefault04" class="form-label">
+              <label for="gender1" class="form-label">
                 النوع
               </label>
               <div class="col-sm-6">
@@ -258,7 +270,7 @@ const SignUP = () => {
                   name="gender"
                   id="gender1"
                 />
-                <label class="form-check-label me-1" for="flexRadioDefault1">
+                <label class="form-check-label me-1" for="gender1">
                   ذكر
                 </label>
               </div>
@@ -269,17 +281,18 @@ const SignUP = () => {
                   name="gender"
                   id="gender2"
                 />
-                <label class="form-check-label me-1" for="flexRadioDefault2">
+                <label class="form-check-label me-1" for="gender2">
                   انثى
                 </label>
               </div>
             </div>
            
-            <div class="col-12">
+            <div class="col-12  text-center">
               <button class="btn btn-dark" type="submit">
                 انشاء حساب
               </button>
             </div>
+            <div className='text-center'>لديك حساب بالفعل؟ <span><Link to="/signin">تسجيل الدخول</Link></span></div>
           </form>
         </div>
       </div>
