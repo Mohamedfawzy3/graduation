@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import style from "../styles/sign.module.css";
 import { Link } from "react-router-dom";
-import axios from 'axios'
+import axios from "axios";
+
 const SignUP = () => {
   const [gov, setGov] = useState("");
   const [index, setIndex] = useState();
@@ -13,16 +14,15 @@ const SignUP = () => {
     setIndex(selectedOption.getAttribute("index"));
     console.log("Index of selected option:", index);
   };
-  const Government=()=>{
-    axios.get('https://atfawry.fawrystaging.com/ECommerceWeb/api/lookups/govs')
-    .then((res)=>console.log(res.data))
-    .catch((err)=>console.log(err))
-  }
-  useEffect(()=>{
-  Government()
-  
- 
-  },[])
+  const Government = () => {
+    axios
+      .get("https://atfawry.fawrystaging.com/ECommerceWeb/api/lookups/govs")
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    Government();
+  }, []);
   const [city, setCity] = useState([
     ["ahmed", "ali"],
     [10, 30],
@@ -35,7 +35,16 @@ const SignUP = () => {
     [8],
     [9],
     [10],
-    ["شبين الكوم","الباجور", "الشهداء", "قويسنا", "منوف", "سرس الليان", "بركه السبع", "تلا"],
+    [
+      "شبين الكوم",
+      "الباجور",
+      "الشهداء",
+      "قويسنا",
+      "منوف",
+      "سرس الليان",
+      "بركه السبع",
+      "تلا",
+    ],
     [],
     [],
     [],
@@ -58,11 +67,11 @@ const SignUP = () => {
         <div
           className={`${style.foir} container col-lg-8 col-sm-12 py-3 bg-white rounded-4 `}
         >
-            <h2 className="text-center mb-4">انشاء حساب</h2>
-            <div className={`text-center`}>
-                <span></span>
-                <span></span>
-            </div>
+          <h2 className="text-center mb-4">انشاء حساب</h2>
+          <div className={`text-center`}>
+            <span></span>
+            <span></span>
+          </div>
           <form class="row g-3 col-md-10 mx-auto">
             <div class="col-md-6">
               <label for="validationDefault01" class="form-label">
@@ -109,7 +118,7 @@ const SignUP = () => {
             </div>
             <div class="col-md-12">
               <label for="id" class="form-label">
-               الرقم القومى
+                الرقم القومى
               </label>
               <input
                 type="number"
@@ -143,7 +152,6 @@ const SignUP = () => {
                 onChange={handleCity}
                 required
                 value={gov}
-               
                 name="government"
               >
                 <option selected disabled value="">
@@ -286,13 +294,18 @@ const SignUP = () => {
                 </label>
               </div>
             </div>
-           
+
             <div class="col-12  text-center">
               <button class="btn btn-dark" type="submit">
                 انشاء حساب
               </button>
             </div>
-            <div className='text-center'>لديك حساب بالفعل؟ <span><Link to="/signin">تسجيل الدخول</Link></span></div>
+            <div className="text-center">
+              لديك حساب بالفعل؟{" "}
+              <span>
+                <Link to="/signin">تسجيل الدخول</Link>
+              </span>
+            </div>
           </form>
         </div>
       </div>

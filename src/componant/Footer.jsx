@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Footer = () => {
+    const date=new Date
     return (
-        <div className='text-center p-3 '> 
-            <p className='fs-5 fw-medium'> all rights are reseves &copy; 2024</p>
+        <div className='text-center p-3 border-top '> 
+            <p className='fs-6 fw-medium m-0 p-1'>جميع الحقوق محفوظه&copy;{date.getFullYear()}</p>
         </div>
     );
 };
