@@ -1,15 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap');
+
 @import url("https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
 
 * {
   box-sizing: border-box;
   direction: rtl;
   font-family: "Tajawal", sans-serif;
+  /* font-family: "Marhey", sans-serif;; */
 }
 :root {
   --main-link-hover: #f5a425;
   --main-transation: 0.3s;
   --a-background: #a12c2f;
   --main-text-color: #1f272b;
+}
+.info_page{
+background-color: #f6f7fa;
+}
+.main_info,.var_info{
+  background-color: #ebf6ee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.main_info div{
+  color: #c9c0c0;
+  margin-bottom: 19px;
+  font-size: 12px;
+  line-height: 1.1;
+  
+}
+.main_info div span{
+  font-size: 18px;
+  color: rgb(92, 168, 85);
+ 
+  transition: var(--main-transation);
+
+}
+.main_info div span a{
+  color:  black;
+}
+.important_info p,.important_info div{
+  direction: ltr;
 }

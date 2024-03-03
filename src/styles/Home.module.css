@@ -5,16 +5,14 @@
 
 /* Your other styles */
 
-* {
-  direction: rtl;
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-}
 
 body {
   /* font-family: 'Marhey', sans-serif; */
   font-family: "Tajawal", sans-serif;
+  direction: rtl;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
 :root {
