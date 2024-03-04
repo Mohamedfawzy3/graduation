@@ -68,7 +68,7 @@ const Navbar = () => {
                   <Link to="/">الرئيسيه</Link>
                 </li>
                 <li className=" ms-sm-1 mb-1">
-                  <Link to="/signup">الاهداف</Link>
+                  <Link to="/patiant">الاهداف</Link>
                 </li>
                 <li className=" ms-sm-1 mb-1">
                   <Link to="">نبذه</Link>

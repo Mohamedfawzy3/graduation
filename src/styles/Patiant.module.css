@@ -15,9 +15,11 @@
   --main-transation: 0.3s;
   --a-background: #a12c2f;
   --main-text-color: #1f272b;
+  --main-backGraound:#ecf1f9;
 }
 .info_page{
-background-color: #f6f7fa;
+/* background-color: #f6f7fa; */
+background-color: var(--main-backGraound);
 }
 .main_info,.var_info{
   background-color: #ebf6ee;
@@ -33,7 +35,7 @@ background-color: #f6f7fa;
 }
 .main_info div span{
   font-size: 18px;
-  color: rgb(92, 168, 85);
+  color: rgb(145, 156, 152);
  
   transition: var(--main-transation);
 
@@ -41,6 +43,18 @@ background-color: #f6f7fa;
 .main_info div span a{
   color:  black;
 }
-.important_info p,.important_info div{
-  direction: ltr;
+.important_info{
+  gap: 20px;
+}
+.important_info>div{
+width: calc((100% - 20px) / 2);
+color: var(--main-text-color);
+}
+@media (max-width:465px) {
+  .important_info div{
+    width: 100%;
+    }
+}
+.important_info div p{
+ 
 }

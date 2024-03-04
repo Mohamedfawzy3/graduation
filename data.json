@@ -5,9 +5,9 @@
     "name":"على محمد سعيد",
     "age":40,
     "gender":1,
-    "birth-date":"10/05/1988",
-    "blood-type":"O",
-    "contact-info":{
+    "birth_date":"10/05/1988",
+    "blood_type":"O",
+    "contact_info":{
         "phone":"01024869884",
         "email":"mohammedromail94@gmail.com",
         "adress":{
@@ -16,8 +16,8 @@
             "street":"ابوسنيطه"
         }
     },
-    "var-info":{
-        "blood-presure":{
+    "var_info":{
+        "blood_presure":{
             "min":80,
             "max":120
         },
@@ -29,7 +29,8 @@
           {
              "issue": "الحساسية",
               "state": "معروفة", 
-              "facts": ["المريض لديه حساسية تجاه البنسلين"]
+              "facts": ["المريض لديه حساسية تجاه البنسلين","kkkkkkkk","المريض لديه حساسية تجاه البنسلين","kkkkkkkk"]
+
              },
           { "issue": "الأدوية الحالية", "state": "معروفة", "facts": ["المريض يتناول الأسبرين لتخفيف الصداع"] },
           { "issue": "التاريخ الطبي", "state": "معروف", "facts": ["خضع المريض لعملية استئصال الزائدة الدودية قبل خمس سنوات"] },

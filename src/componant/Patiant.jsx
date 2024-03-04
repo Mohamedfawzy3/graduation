@@ -6,25 +6,29 @@ import {
   faHouse,
   faEnvelope,
   faPhone,
-
-  faCircleCheck
+  faTriangleExclamation
+  
 } from "@fortawesome/free-solid-svg-icons";
 
 const Patiant = () => {
-  const [patiant,setPatiant]=useState({})
+  let [important_issues,setImportant_issues]=useState([])
+  const [patient,setPatient]=useState({})
   const [issues,setIssues]=useState([])
+  const [contact_info,setContact_info]=useState({})
   const getPatiantInfo=()=>{
-    axios.get('http://localhost:5000/patiants/0')
-    .then(res=>{setPatiant(res.data)
-    console.log(res)})
+    axios.get('http://localhost:2000/patiants/0')
+    .then(res=>{setPatient(res.data)
+      setImportant_issues(res.data.important_medical_issues)
+      setContact_info(res.data.contact_info)
+    })
     .catch(err=>console.log(err))
   }
   useEffect(()=>{
   getPatiantInfo();
-  
+ 
   },[])
-  setIssues(patiant)
-  console.log(patiant)
+ 
+ 
   return (
     <div className={`${style.info_page}`}>
         <div className="container">
@@ -33,46 +37,47 @@ const Patiant = () => {
           <p className="border-bottom text-center fw-bold pb-2 col-12">البيانات الاساسيه</p>
           <div className="col-12 pb-4">
             الاسم <br />
-            <span className="fw-medium">محمد فوزى ابوالعينين</span>
+            <span className="fw-medium">{patient.name}</span>
           </div>
           <div className="col-3">
             {" "}
             <div>
               العمر
-              <br /> <span>22</span>
+              <br /> <span>{patient.age}</span>
             </div>
             <div>
               النوع
               <br />
-              <span>ذكر</span>
+              <span>{patient.gender==1?"ذكر":"انثى"}</span>
             </div>
             <div>
               تاريخ الميلاد
               <br />
-              <span>9/4/2002</span>
+              <span>{patient.birth_date}</span>
             </div>
             <div>
               فصيله الدم
               <br />
-              <span>O</span>
+              <span>{patient.blood_type}</span>
             </div>
           </div>
           <div className="col-9">
             <div>
-              <FontAwesomeIcon icon={faPhone} />{" "}
-              <span className="me-2">01024869884</span>
+              <FontAwesomeIcon icon={faPhone} />
+             
+              <span className="me-2">{contact_info.phone}</span>
             </div>
             <div>
-              <FontAwesomeIcon icon={faEnvelope} />{" "}
+              <FontAwesomeIcon icon={faEnvelope} />
               <span className="me-2">
-                <a href="mailto:mohameedromail94@gmail.com">
-                  mohammedromail@gmail.com
+                <a href={`mailto:${contact_info.email}`}>
+                 {contact_info.email}
                 </a>
               </span>
             </div>
             <div>
-              <FontAwesomeIcon icon={faHouse} />{" "}
-              <span className="me-2">ابوسنيطه-الباجور-منوفيه</span>
+              <FontAwesomeIcon icon={faHouse} />
+              <span className="me-2">{contact_info.age}</span>
             </div>
           </div>
         </div>
@@ -86,10 +91,23 @@ const Patiant = () => {
       {/* Create the section of the important info about patiant  */}
       <section className="my-5 bg-white rounded-4">
         <h2 className="text-center py-4 ">معلومات هامه</h2>
-        <div className={`${style.important_info} container ` }  >
-        <p className="d-flex align-items-center"> <span className="text-primary"><FontAwesomeIcon icon={faCircleCheck} /></span> <div className="ms-2 fw-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptatum animi laudantium fuga ad ea expedita, pariatur nisi sapiente. Ullam ex unde dolore</div></p>
-       
-
+        <div className={`${style.important_info} container d-flex flex-wrap flex-column flex-sm-row` }  >
+    
+{important_issues.map((el,index)=>{
+  return(
+    <div key={index} className="bg-light p-2">
+    <p className="fw-bold"><span className="text-danger"><FontAwesomeIcon icon={faTriangleExclamation} /></span> {el.issue}</p>
+   {
+    el.facts.map((el)=>{
+      return(
+        <p  className=""> <div className=" ">{el}</div></p>
+      )
+    })
+   }
+    </div>
+  )
+ })
+}
         </div>
       </section>
       </div>
