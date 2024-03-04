@@ -15,15 +15,16 @@ const Patiant = () => {
   const [patient,setPatient]=useState({})
   const [issues,setIssues]=useState([])
   const [contact_info,setContact_info]=useState({})
-  const getPatiantInfo=()=>{
-    axios.get('http://localhost:2000/patiants/0')
-    .then(res=>{setPatient(res.data)
-      setImportant_issues(res.data.important_medical_issues)
-      setContact_info(res.data.contact_info)
-    })
-    .catch(err=>console.log(err))
-  }
+ 
   useEffect(()=>{
+    const getPatiantInfo=()=>{
+      axios.get("https://fake-data-oj4s.onrender.com/patiants/0")
+      .then(res=>{setPatient(res.data)
+        setImportant_issues(res.data.important_medical_issues)
+        setContact_info(res.data.contact_info)
+      })
+      .catch(err=>console.log(err))
+    }
   getPatiantInfo();
  
   },[])
@@ -77,7 +78,7 @@ const Patiant = () => {
             </div>
             <div>
               <FontAwesomeIcon icon={faHouse} />
-              <span className="me-2">{contact_info.age}</span>
+              <span className="me-2">{contact_info.adress?.govern }-{contact_info.adress?.city}-{contact_info.adress?.street}</span>
             </div>
           </div>
         </div>
