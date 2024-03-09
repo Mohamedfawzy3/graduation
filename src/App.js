@@ -9,6 +9,7 @@ import Error from './componant/Error';
 import Signin from './componant/Signin';
 import ContactUs from './componant/ContactUs';
 import Patiant from './componant/Patiant';
+import Record from './componant/Record';
 import { useEffect } from 'react';
 function App() {
   useEffect(()=>{
@@ -24,6 +25,7 @@ function App() {
     <Route path="/signup" element={<SignUP/>}/>
    <Route path="/contactus" element={<ContactUs/>}/>
    <Route path='/Patiant' element={<Patiant/>}></Route>
+   <Route path='/record' element={<Record/>}/>
     <Route path='*' element={<Error/>}/>
   </Routes>
   </HashRouter>
