@@ -71,7 +71,7 @@ const Navbar = () => {
                   <Link to="/patiant">الاهداف</Link>
                 </li>
                 <li className=" ms-sm-1 mb-1">
-                  <Link to="">نبذه</Link>
+                  <Link to="/record">نبذه</Link>
                 </li>
                 <li>
                   <Link to="/contactus">تواصل معنا</Link>
