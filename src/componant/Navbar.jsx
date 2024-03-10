@@ -74,6 +74,9 @@ const Navbar = () => {
                   <Link to="/record">نبذه</Link>
                 </li>
                 <li>
+                {/* <li className=" ms-sm-1 mb-1 ">
+                  <Link to="/record">السجل</Link>
+                </li> */}
                   <Link to="/contactus">تواصل معنا</Link>
                 </li>
               </ul>

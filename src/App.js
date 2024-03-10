@@ -10,12 +10,17 @@ import Signin from './componant/Signin';
 import ContactUs from './componant/ContactUs';
 import Patiant from './componant/Patiant';
 import Record from './componant/Record';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
+import Rosheta from './componant/Rosheta';
+import Tahalil from './componant/Tahalil';
 function App() {
   useEffect(()=>{
     document.title='Life App'
   },[])
   return (
+    <Suspense fallback={<div>waiting...</div>}>
+
+    
   <HashRouter>
   <Routes>
     {["/",'h',"H","Home","home"].map((path,index)=>{
@@ -25,12 +30,17 @@ function App() {
     <Route path="/signup" element={<SignUP/>}/>
    <Route path="/contactus" element={<ContactUs/>}/>
    <Route path='/Patiant' element={<Patiant/>}></Route>
-   <Route path='/record' element={<Record/>}/>
+
+  <Route path='/record' element={<Record/>}>
+  <Route path='rosheta' element={<Rosheta/>}/>
+  <Route path='tahalil' element={<Tahalil/>}/>
+  </Route>
+    
     <Route path='*' element={<Error/>}/>
   </Routes>
   </HashRouter>
   
-     
+  </Suspense>
   );
 }
 

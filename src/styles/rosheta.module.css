@@ -18,12 +18,6 @@ body {
   --main-text-color: #1f272b;
   --main-backGraound:#ecf1f9;
 }
-.record{
-    background-color: var(--main-backGraound)
+.box{
+    background-color: #ddd ;
 }
- .record .content_Box{
-
- }
- .record .side_bar{
-  
- }
