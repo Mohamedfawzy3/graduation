@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/graduation/static/css/main.68d8937b.css",
-    "main.js": "/graduation/static/js/main.085400fd.js",
+    "main.css": "/graduation/static/css/main.9274ca9d.css",
+    "main.js": "/graduation/static/js/main.cce444d1.js",
     "static/js/453.a1b387fe.chunk.js": "/graduation/static/js/453.a1b387fe.chunk.js",
     "static/media/pg25.jpg": "/graduation/static/media/pg25.a9bdc69b46f23865689c.jpg",
     "static/media/pg21.jpg": "/graduation/static/media/pg21.b4b0d96934f234b81463.jpg",
@@ -9,12 +9,12 @@
     "static/media/blood-presure3.png": "/graduation/static/media/blood-presure3.15b9fcc05dcb6234d8d1.png",
     "static/media/height.png": "/graduation/static/media/height.f65caf84ffa02865cecc.png",
     "index.html": "/graduation/index.html",
-    "main.68d8937b.css.map": "/graduation/static/css/main.68d8937b.css.map",
-    "main.085400fd.js.map": "/graduation/static/js/main.085400fd.js.map",
+    "main.9274ca9d.css.map": "/graduation/static/css/main.9274ca9d.css.map",
+    "main.cce444d1.js.map": "/graduation/static/js/main.cce444d1.js.map",
     "453.a1b387fe.chunk.js.map": "/graduation/static/js/453.a1b387fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68d8937b.css",
-    "static/js/main.085400fd.js"
+    "static/css/main.9274ca9d.css",
+    "static/js/main.cce444d1.js"
   ]
 }
