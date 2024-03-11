@@ -27,7 +27,7 @@ axios.get("https://fake-data-oj4s.onrender.com/patiants/0")
     {tahalil&&Array.isArray(tahalil)&&tahalil.map((el,index)=>{
         return(
             <tr key={index} className='text-center'>
-                <td>{index}</td>
+                <td>{index +1}</td>
                 <td>{el.name}</td>
                 <td>{el.doctor}</td>
                 <td>{el.date}</td>

@@ -68,10 +68,10 @@ const Navbar = () => {
                   <Link to="/">الرئيسيه</Link>
                 </li>
                 <li className=" ms-sm-1 mb-1">
-                  <Link to="/patiant">الاهداف</Link>
+                  <Link to="/patiant">عنى</Link>
                 </li>
                 <li className=" ms-sm-1 mb-1">
-                  <Link to="/record">نبذه</Link>
+                  <Link to="/record">السجل</Link>
                 </li>
                 <li>
                 {/* <li className=" ms-sm-1 mb-1 ">

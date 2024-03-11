@@ -1,10 +1,12 @@
 
 import style from "../styles/record.module.css";
-import Rosheta from "./Rosheta";
+import Navbar from "./Navbar";
 import { Link, Outlet } from "react-router-dom";
 const Record = () => {
 
   return (
+    <>
+   
     <section className={`${style.record} `}>
       <div className="container py-4">
         <h3 className="text-center py-3">السجل الطبى</h3>
@@ -14,7 +16,7 @@ const Record = () => {
     <li>
   <Link to="rosheta">الزيارات</Link>
   <Link to="tahalil">التحاليل</Link>
-  <Link to="/home">الاشعه</Link>
+  <Link to="ashea">الاشعه</Link>
 </li>
     </ul>
 </div>
@@ -23,6 +25,7 @@ const Record = () => {
        
       </div>
     </section>
+    </>
   );
 };
 

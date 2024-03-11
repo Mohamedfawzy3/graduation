@@ -13,6 +13,7 @@ import Record from './componant/Record';
 import { Suspense, useEffect } from 'react';
 import Rosheta from './componant/Rosheta';
 import Tahalil from './componant/Tahalil';
+import Ashea from './componant/Ashea';
 function App() {
   useEffect(()=>{
     document.title='Life App'
@@ -34,6 +35,8 @@ function App() {
   <Route path='/record' element={<Record/>}>
   <Route path='rosheta' element={<Rosheta/>}/>
   <Route path='tahalil' element={<Tahalil/>}/>
+  <Route path='ashea' element={<
+  Ashea/>}/>
   </Route>
     
     <Route path='*' element={<Error/>}/>
