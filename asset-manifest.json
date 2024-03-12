@@ -1,7 +1,11 @@
 {
   "files": {
-    "main.css": "/graduation/static/css/main.9274ca9d.css",
-    "main.js": "/graduation/static/js/main.67e8035d.js",
+    "main.css": "/graduation/static/css/main.778ec7f8.css",
+    "main.js": "/graduation/static/js/main.d7292e96.js",
+    "static/css/561.31d6cfe0.chunk.css": "/graduation/static/css/561.31d6cfe0.chunk.css",
+    "static/js/561.4e87878d.chunk.js": "/graduation/static/js/561.4e87878d.chunk.js",
+    "static/css/56.31d6cfe0.chunk.css": "/graduation/static/css/56.31d6cfe0.chunk.css",
+    "static/js/56.ac512787.chunk.js": "/graduation/static/js/56.ac512787.chunk.js",
     "static/js/453.a1b387fe.chunk.js": "/graduation/static/js/453.a1b387fe.chunk.js",
     "static/media/pg25.jpg": "/graduation/static/media/pg25.a9bdc69b46f23865689c.jpg",
     "static/media/pg21.jpg": "/graduation/static/media/pg21.b4b0d96934f234b81463.jpg",
@@ -9,12 +13,14 @@
     "static/media/blood-presure3.png": "/graduation/static/media/blood-presure3.15b9fcc05dcb6234d8d1.png",
     "static/media/height.png": "/graduation/static/media/height.f65caf84ffa02865cecc.png",
     "index.html": "/graduation/index.html",
-    "main.9274ca9d.css.map": "/graduation/static/css/main.9274ca9d.css.map",
-    "main.67e8035d.js.map": "/graduation/static/js/main.67e8035d.js.map",
+    "main.778ec7f8.css.map": "/graduation/static/css/main.778ec7f8.css.map",
+    "main.d7292e96.js.map": "/graduation/static/js/main.d7292e96.js.map",
+    "561.4e87878d.chunk.js.map": "/graduation/static/js/561.4e87878d.chunk.js.map",
+    "56.ac512787.chunk.js.map": "/graduation/static/js/56.ac512787.chunk.js.map",
     "453.a1b387fe.chunk.js.map": "/graduation/static/js/453.a1b387fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9274ca9d.css",
-    "static/js/main.67e8035d.js"
+    "static/css/main.778ec7f8.css",
+    "static/js/main.d7292e96.js"
   ]
 }
