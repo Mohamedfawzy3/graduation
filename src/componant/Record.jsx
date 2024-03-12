@@ -1,9 +1,11 @@
 
+import { useState } from "react";
 import style from "../styles/record.module.css";
 import Navbar from "./Navbar";
+import Rosheta from "./Rosheta";
 import { Link, Outlet } from "react-router-dom";
 const Record = () => {
-
+const [flag,setFlag]=useState(true)
   return (
     <>
    
@@ -20,7 +22,11 @@ const Record = () => {
 </li>
     </ul>
 </div>
-<div className=""><Outlet/></div>
+<div className="">
+<Outlet/>
+  
+  
+  </div>
         </div>
        
       </div>

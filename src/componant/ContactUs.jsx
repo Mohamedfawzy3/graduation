@@ -28,7 +28,7 @@ const ContactUs = () => {
             </div>
             <div className={`${style.whatsapp} py-3`}>
               <h4>واتساب</h4>
-              <div className="fs-6 fw-medium">01024869884</div>
+              <div className="fs-6 fw-medium">01033595533</div>
             </div>
           </div>
           <div className={`${style.contact_form} col-12 col-lg-8 p-4 `}>

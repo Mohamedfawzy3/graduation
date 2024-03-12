@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-
+import React from 'react';
 import {HashRouter,Route,Routes} from 'react-router-dom';
 import './App.css';
 import Home from './componant/Home';
@@ -11,9 +11,11 @@ import ContactUs from './componant/ContactUs';
 import Patiant from './componant/Patiant';
 import Record from './componant/Record';
 import { Suspense, useEffect } from 'react';
-import Rosheta from './componant/Rosheta';
-import Tahalil from './componant/Tahalil';
-import Ashea from './componant/Ashea';
+import Doctor from './componant/Doctor';
+const Rosheta = React.lazy(() => import('./componant/Rosheta'));
+const Tahalil = React.lazy(() => import('./componant/Tahalil'));
+const Ashea = React.lazy(() => import('./componant/Ashea'));
+
 function App() {
   useEffect(()=>{
     document.title='Life App'
@@ -38,7 +40,7 @@ function App() {
   <Route path='ashea' element={<
   Ashea/>}/>
   </Route>
-    
+    <Route path='/doctor' element={<Doctor/>}/>
     <Route path='*' element={<Error/>}/>
   </Routes>
   </HashRouter>

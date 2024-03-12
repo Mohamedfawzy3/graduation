@@ -9,6 +9,7 @@ import {
   faTriangleExclamation
   
 } from "@fortawesome/free-solid-svg-icons";
+import Visitform from "./Visitform";
 
 const Patiant = () => {
   let [important_issues,setImportant_issues]=useState([])
@@ -111,6 +112,7 @@ const Patiant = () => {
 }
         </div>
       </section>
+    <Visitform/>
       </div>
     </div>
   );
