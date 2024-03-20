@@ -24,6 +24,13 @@ body {
  .record .content_Box{
 
  }
- .record .side_bar{
-  
+ .record .side_bar .active{
+  background: #000;
+  border-radius: 4px;
+  border-bottom: 3px solid var(--main-link-hover);
+  color: white;
+ }
+ .record .side_bar a:hover{
+  color: var(--main-link-hover);
+ 
  }

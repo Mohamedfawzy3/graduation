@@ -11,14 +11,20 @@ const [flag,setFlag]=useState(true)
    
     <section className={`${style.record} `}>
       <div className="container py-4">
-        <h3 className="text-center py-3">السجل الطبى</h3>
+        <h3 className="text-center py-3 fw-bold fs-2">السجل الطبى</h3>
         <div className={`${style.content_Box } `}>
-<div className={`${style.side_bar} text-center `}>
-    <ul >
+<div className={`${style.side_bar} text-center`}>
+    <ul className="d-flex justify-content-center p-0">
     <li>
-  <Link to="rosheta">الزيارات</Link>
-  <Link to="tahalil">التحاليل</Link>
-  <Link to="ashea">الاشعه</Link>
+  <Link className={`${style.active} fw-medium`} to="rosheta">الزيارات</Link>
+ 
+</li>
+<li>
+<Link className={`fw-medium`} to="tahalil">التحاليل</Link>
+ 
+</li>
+<li>
+<Link className={`fw-medium`} to="ashea">الاشعه</Link>
 </li>
     </ul>
 </div>

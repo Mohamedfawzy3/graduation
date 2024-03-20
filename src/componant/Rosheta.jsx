@@ -13,18 +13,27 @@ const Rosheta = () => {
         .catch((err) => console.log(err));
     }, []);
     return (
-        <div className={`${style.Box}`}>
-        {visition_info &&Array.isArray(visition_info)&&
+      <>
+       {Array.isArray(visition_info)?
+        <div className={`${style.Box} d-flex flex-wrap justify-content-between mt-3`}>
+       
+        { visition_info &&Array.isArray(visition_info)&&
           visition_info.map((el, index) => {
             return (
-              <div className={`${style.box}`} key={index}>
-                <div className="p-3 w-fit-content">
+              <div className={`${style.box} mb-3 col-5`} key={index}>
+                <div className={`${style.doctor_info} p-3 w-fit-content`}>
                   <div>الدكتور</div>
                   <h3>{el.doctor}</h3>
                   <div>{el.dep}</div>
                   <div>{el.info?.phone}</div>
+                  <div className={`${style.date}`}>
+                  <span>{el.date?.day}/</span>
+                  <span>{el.date?.monthe}/</span>
+                  <span>{el.date?.year}</span>
+                  </div>
+                 
                 </div>
-                <div className={`${style.main_content} bg-white`}>
+                <div className={`${style.main_content} text-center container py-4`}>
                   <h4>الروشته</h4>
                   <div>
                     {el &&
@@ -58,7 +67,19 @@ const Rosheta = () => {
               </div>
             );
           })}
+
+
       </div>
+        :
+        <div className='text-center position-relative mt-5'>
+        <div className="spinner-border text-primary text-center d-block position-absolute start-50 " role="status" style={{top:"-30px"}}>
+       
+    </div>
+         <span >جارى تحميل البيانات....</span>
+         </div>
+        }
+    
+      </>
     );
 };
 

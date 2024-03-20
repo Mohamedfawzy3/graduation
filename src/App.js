@@ -17,11 +17,11 @@ const Tahalil = React.lazy(() => import('./componant/Tahalil'));
 const Ashea = React.lazy(() => import('./componant/Ashea'));
 
 function App() {
-  useEffect(()=>{
-    document.title='Life App'
-  },[])
+//   useEffect(()=>{
+//     document.title='Life App'
+//   },[])
   return (
-    <Suspense fallback={<div>waiting...</div>}>
+    <Suspense fallback={<div className='d-flex justify-content-center align-items-center'> <div>waiting...</div></div>}>
 
     
   <HashRouter>
