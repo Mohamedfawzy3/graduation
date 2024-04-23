@@ -28,7 +28,8 @@ body {
 .visit_info input,.visit_info textarea{
  outline: none;
     padding: 3px 10px;
-    border: 1px solid #c0c5c4;
+    /* border: 1px solid #c0c5c4; */
+    border: none;
     background: #f5f5f5;
     border-radius: 5px;
 }
