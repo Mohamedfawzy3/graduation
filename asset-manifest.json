@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/graduation/static/css/main.3938f280.css",
+    "main.css": "/graduation/static/css/main.4c02ec5c.css",
     "main.js": "/graduation/static/js/main.57318a51.js",
     "static/css/561.31d6cfe0.chunk.css": "/graduation/static/css/561.31d6cfe0.chunk.css",
     "static/js/561.9c9247e7.chunk.js": "/graduation/static/js/561.9c9247e7.chunk.js",
@@ -14,14 +14,14 @@
     "static/media/blood-presure3.png": "/graduation/static/media/blood-presure3.15b9fcc05dcb6234d8d1.png",
     "static/media/height.png": "/graduation/static/media/height.f65caf84ffa02865cecc.png",
     "index.html": "/graduation/index.html",
-    "main.3938f280.css.map": "/graduation/static/css/main.3938f280.css.map",
+    "main.4c02ec5c.css.map": "/graduation/static/css/main.4c02ec5c.css.map",
     "main.57318a51.js.map": "/graduation/static/js/main.57318a51.js.map",
     "561.9c9247e7.chunk.js.map": "/graduation/static/js/561.9c9247e7.chunk.js.map",
     "56.ac512787.chunk.js.map": "/graduation/static/js/56.ac512787.chunk.js.map",
     "453.a1b387fe.chunk.js.map": "/graduation/static/js/453.a1b387fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3938f280.css",
+    "static/css/main.4c02ec5c.css",
     "static/js/main.57318a51.js"
   ]
 }
