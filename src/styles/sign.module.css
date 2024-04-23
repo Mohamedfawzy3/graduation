@@ -20,8 +20,14 @@ input::placeholder {
   color: #778686 !important;
 }
 label {
-  color: #009999 !important;
+  color: #009999 ;
 }
 .body {
   background-color: #ecf1f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
+.users label{
+  color: var(--main-text-color) !important;
+  }

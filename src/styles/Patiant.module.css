@@ -18,11 +18,12 @@ body {
 .info_page{
 /* background-color: #f6f7fa; */
 background-color: var(--main-backGraound);
+padding-top: 100px;
 }
 .main_info,.var_info{
   background-color: #ebf6ee;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+border-radius: 10px;
 }
 .main_info div{
   color: #c9c0c0;

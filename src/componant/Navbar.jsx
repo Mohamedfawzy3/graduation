@@ -36,7 +36,9 @@ const Navbar = () => {
           className={`${style.navContainer} container d-flex justify-content-between align-items-center`}
         >
           <div className={`${style.logo} `}>
-            <h3>الحياه</h3>
+           <Link to={'/Home'}>
+            <img src={require('../images/logo5.png')} alt="Logo" />
+           </Link>
           </div>
           <div>
             <div

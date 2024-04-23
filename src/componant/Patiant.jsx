@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "../styles/Patiant.module.css";
+import Navbar from "./Navbar";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -31,6 +32,8 @@ const Patiant = () => {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <div className={`${style.info_page}`}>
       <div className="container">
         <div className="d-flex justify-content-between gap-2 flex-column flex-sm-row ">
@@ -149,6 +152,7 @@ const Patiant = () => {
         <Visitform />
       </div>
     </div>
+    </>
   );
 };
 

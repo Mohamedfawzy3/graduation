@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import style from "../styles/sign.module.css";
-import { Link } from "react-router-dom";
+import style from "../../styles/sign.module.css";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignUP = () => {
   const [gov, setGov] = useState("");
   const [index, setIndex] = useState();
   let [flag, setFlag] = useState(false);
+  let Navigate = useNavigate();
   const handleCity = (e) => {
+    console.log(e.target.value);
     setGov(e.target.value);
     setFlag(true);
     const selectedOption = e.target.options[e.target.selectedIndex];
@@ -17,14 +19,16 @@ const SignUP = () => {
   const Government = () => {
     axios
       .get("https://atfawry.fawrystaging.com/ECommerceWeb/api/lookups/govs")
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res.data[0].cityDataModels);
+      })
       .catch((err) => console.log(err));
   };
   useEffect(() => {
     Government();
   }, []);
   const [city, setCity] = useState([
-    ["ahmed", "ali"],
+    [1],
     [10, 30],
     [2],
     [3],
@@ -61,6 +65,40 @@ const SignUP = () => {
     [],
     [],
   ]);
+
+ 
+  let [user_info, setUser_info] = useState({
+    email: "",
+    phone: "",
+    gov: "",
+    city: "",
+    street: "",
+    password: "",
+  });
+  const HandleSumbit = (e) => {
+    
+    if (e.target.name === gov) {
+      setGov(e.target.value);
+      setFlag(true);
+      const selectedOption = e.target.options[e.target.selectedIndex];
+      setIndex(selectedOption.getAttribute("index"));
+      console.log("Index of selected option:", index);
+    }
+    const { name, value } = e.target;
+    setUser_info((old) => ({
+      ...old,
+      [name]: value,
+    }));
+    console.log(user_info);
+  };
+  let goToNextPage = (e) => {
+    e.preventDefault();
+    if (user_info.password === user_info.RePassword) {
+      Navigate(`/signup/${user_info.user}`);
+    } else {
+      console.log("password not the smae");
+    }
+  };
   return (
     <div className={`${style.body}`}>
       <div className={`container p-4`}>
@@ -72,8 +110,8 @@ const SignUP = () => {
             <span></span>
             <span></span>
           </div>
-          <form class="row g-3 col-md-10 mx-auto">
-            <div class="col-md-6">
+          <form class="row g-3 col-md-10 mx-auto" onSubmit={goToNextPage}>
+            {/* <div class="col-md-6">
               <label for="validationDefault01" class="form-label">
                 الاسم الاول
               </label>
@@ -100,10 +138,10 @@ const SignUP = () => {
                 placeholder="اسم العائله"
                 required
               />
-            </div>
+            </div> */}
             <div class="col-md-12">
               <label for="email" class="form-label">
-                الايميل
+                البريد الالكترونى
               </label>
 
               <input
@@ -114,9 +152,15 @@ const SignUP = () => {
                 placeholder="Example@gmail.com"
                 aria-describedby="inputGroupPrepend2"
                 required
+                onInvalid={(e) =>
+                  e.target.setCustomValidity("برجاء ادخال بريد الكترونى صحيح")
+                }
+                onInput={(e) => e.target.setCustomValidity("")}
+                value={user_info.email}
+                onChange={HandleSumbit}
               />
             </div>
-            <div class="col-md-12">
+            {/* <div class="col-md-12">
               <label for="id" class="form-label">
                 الرقم القومى
               </label>
@@ -128,7 +172,7 @@ const SignUP = () => {
                 placeholder="ادخل 14 رقم"
                 required
               />
-            </div>
+            </div> */}
             <div class="col-md-12">
               <label for="phone" class="form-label">
                 الهاتف
@@ -140,6 +184,8 @@ const SignUP = () => {
                 id="phone"
                 placeholder="ادخل رقم الهاتف المحمول"
                 required
+                value={user_info.phone}
+                onChange={HandleSumbit}
               />
             </div>
             <div class="col-6">
@@ -149,10 +195,13 @@ const SignUP = () => {
               <select
                 class="form-select"
                 id="gov"
-                onChange={handleCity}
+                onChange={(e) => {
+                  HandleSumbit(e);
+                  handleCity(e);
+                }}
                 required
-                value={gov}
-                name="government"
+                name="gov"
+                value={user_info.gov}
               >
                 <option selected disabled value="">
                   اختر المحافظه
@@ -244,20 +293,28 @@ const SignUP = () => {
               <label for="city" class="form-label">
                 المدينه
               </label>
-              <select class="form-select" id="city" disabled={!flag} required>
+              <select
+                class="form-select"
+                id="city"
+                disabled={!flag}
+                required
+                name="city"
+                value={user_info.city}
+                onChange={HandleSumbit}
+              >
                 <option selected disabled value="">
                   اختر مدينه
                 </option>
                 {flag
                   ? city[index].map((el) => {
-                      return <option>{el}</option>;
+                      return <option value={el}>{el}</option>;
                     })
                   : null}
               </select>
             </div>
             <div class="col-sm-12">
               <label for="validationDefault03" class="form-label">
-                اسم الشارع ورقم المنزل
+                اسم الشارع
               </label>
               <input
                 type="text"
@@ -265,40 +322,119 @@ const SignUP = () => {
                 id="validationDefault03"
                 placeholder="اسم الشارع"
                 required
+                name="street"
+                value={user_info.street}
+                onChange={HandleSumbit}
               />
             </div>
-            <div class="col-md-12">
-              <label for="gender1" class="form-label">
-                النوع
+
+            <div class="col-md-12 ">
+              <label for="users" class="form-label">
+                هل انت؟
               </label>
-              <div class="col-sm-6">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="gender1"
-                />
-                <label class="form-check-label me-1" for="gender1">
-                  ذكر
-                </label>
-              </div>
-              <div class="col-sm-6">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="gender2"
-                />
-                <label class="form-check-label me-1" for="gender2">
-                  انثى
-                </label>
+              <div className="d-sm-flex justify-content-between">
+                <div class={`${style.users}`}>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="user"
+                    value="patient"
+                     onChange={HandleSumbit}
+                    id="patient"
+                  />
+                  <label class="form-check-label me-1" for="patient">
+                    مريض
+                  </label>
+                </div>
+                <div class={`${style.users}`}>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="user"
+                     value="doctor"
+                     onChange={HandleSumbit}
+                    id="doctor"
+                  />
+                  <label class="form-check-label me-1" for="doctor">
+                    طبيب
+                  </label>
+                </div>
+                <div class={`${style.users}`}>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="user"
+                    value="Pharmacy"
+                     onChange={HandleSumbit}
+
+                    id="pharmacy"
+                  />
+                  <label class="form-check-label me-1" for="pharmacy">
+                    صيدليه
+                  </label>
+                </div>
+                <div class={`${style.users}`}>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="user"
+                    value="lab"
+                     onChange={HandleSumbit}
+                    id="laboratory"
+                  />
+                  <label class="form-check-label me-1" for="laboratory">
+                    معمل تحاليل
+                  </label>
+                </div>
+                <div class={`${style.users}`}>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="user"
+                    value="x-ray"
+                     onChange={HandleSumbit}
+              
+                    id="x-ray"
+                  />
+                  <label class="form-check-label me-1" for="x-ray">
+                    معمل اشعه
+                  </label>
+                </div>
               </div>
             </div>
+            <div class="col-md-6">
+              <label for="pass" class="form-label">
+                الباسورد
+              </label>
+              <input
+                type="password"
+                class={`form-control ${style.inputChange}`}
+                id="pass"
+                placeholder="ادخل باسورد"
+                required
+                name="password"
+                value={user_info.password}
+                onChange={HandleSumbit}
+              />
+            </div>
 
+            <div class="col-md-6">
+              <label for="pass2" class="form-label">
+                اعد الباسورد
+              </label>
+              <input
+                type="password"
+                class={`form-control ${style.inputChange}`}
+                id="pass2"
+                placeholder="اعد كتابه الباسورد"
+                required
+                name="RePassword"
+                onChange={HandleSumbit}
+              />
+            </div>
+            {/* <input type="date" name="date" onChange={HandleSumbit} /> */}
             <div class="col-12  text-center">
-              <button class="btn btn-dark" type="submit">
-                انشاء حساب
-              </button>
+              <button class="btn btn-dark">التالى</button>
             </div>
             <div className="text-center">
               لديك حساب بالفعل؟{" "}
